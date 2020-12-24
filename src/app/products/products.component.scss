@@ -1,0 +1,27 @@
+.my-card {
+  display: inline-block;
+  margin: 15px;
+}
+
+.quantity {
+  position: relative;
+  align-items: center;
+  display: flex;
+  right: -46px;
+}
+
+.remove-item {
+  position: relative;
+  right: 0;
+}
+
+.quantityNum {
+  margin: 10px;
+}
+
+.title {
+  padding: 20px;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+

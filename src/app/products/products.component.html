@@ -1,0 +1,18 @@
+<div class="title">My Cart</div>
+<hr>
+<div class="col-3 my-card" *ngFor="let p of products$ | async">
+  <div class="remove-item"><a (click)="onRemove(p)" class="btn btn-primary pull-right">X</a></div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{p.image}}">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <h3 class="card-title">{{p.price | currency:'ILS'}}</h3>
+      <p class="card-text">{{p.description}}</p>
+      <div class="quantity">
+        <button class="btn btn-primary" (click)="onIncrease(p)">+</button>
+        <p class="quantityNum">{{p.amount}}</p>
+        <button class="btn btn-primary" (click)="onDecrease(p)">-</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<table>
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Total</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of products$ | async">
+    <td data-label="Name">{{p.name}}</td>
+    <td data-label="Amount">{{p.amount}}</td>
+    <td data-label="Total">{{p.price * p.amount}}</td>
+    <td class="x" (click)="onRemove(p)">X</td>
+  </tr>
+  </tbody>
+</table>
+<div class="total">
+  {{isMoreThatForProductsInCart() ? 'Increased shipping fee' : 'Shipping fee'}}: {{isMoreThatForProductsInCart() ? 200 : 50}}
+</div>
+
+<div class="total">
+  Products sum: {{getTotalPrice()}}
+</div>
+
+<div class="total">
+  <b>
+    Total: {{isMoreThatForProductsInCart() ? getTotalPrice() + 200 : getTotalPrice() + 50 }}
+  </b>
+</div>
